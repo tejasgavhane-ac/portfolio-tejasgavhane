@@ -105,7 +105,7 @@ const CERTIFICATIONS = [
   {
     title: 'SAP FICO (S/4HANA)',
     issuer: 'D-Tech Point IT/ERP Training Institute',
-    status: 'Pursuing',
+    status: 'Completed',
     statusColor: 'text-yellow-400',
     icon: '🏆',
     desc: 'Comprehensive SAP S/4HANA Financial Accounting & Controlling module training with hands-on configuration and functional expertise.',
