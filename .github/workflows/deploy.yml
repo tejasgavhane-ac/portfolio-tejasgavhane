@@ -19,7 +19,6 @@ jobs:
   build:
     name: Build React Portfolio
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,8 +33,6 @@ jobs:
 
       - name: Build for production
         run: npm run build
-        env:
-          NODE_ENV: production
 
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
@@ -49,7 +46,6 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
