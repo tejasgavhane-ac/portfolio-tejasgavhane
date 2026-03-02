@@ -424,7 +424,7 @@ function HeroSection() {
                 Get In Touch <ArrowRight size={16} />
               </a>
               <a
-                href="/portfoliotejasgavhane/resume.pdf"
+                href="/portfolio-tejasgavhane/resume.pdf"
                 download="Tejas_Gavhane_Resume.pdf"
                 className="flex items-center gap-2 border border-gold-500/40 hover:border-gold-400 text-gold-400 hover:text-gold-300 font-body font-medium px-7 py-3 rounded-sm transition-all hover:bg-gold-500/5"
               >
@@ -951,14 +951,14 @@ function ResumeSection() {
         {/* Action buttons */}
         <AnimatedSection className="flex flex-wrap gap-4 mb-8">
           <a
-            href="/portfoliotejasgavhane/resume.pdf"
+            href="/portfolio-tejasgavhane/resume.pdf"
             download="Tejas_Gavhane_Resume.pdf"
             className="flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-navy-900 font-body font-semibold px-6 py-3 rounded-sm transition-all hover:shadow-lg hover:shadow-gold-500/20"
           >
             <Download size={16} /> Download Resume (PDF)
           </a>
           <a
-            href="/portfoliotejasgavhane/resume.pdf"
+            href="/portfolio-tejasgavhane/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 border border-gold-500/40 hover:border-gold-400 text-gold-400 font-body font-medium px-6 py-3 rounded-sm transition-all hover:bg-gold-500/5"
@@ -979,7 +979,7 @@ function ResumeSection() {
               </div>
             )}
             <iframe
-              src="/portfoliotejasgavhane/resume.pdf"
+              src="/portfolio-tejasgavhane/resume.pdf"
               title="Tejas Gavhane Resume"
               width="100%"
               height="800px"
