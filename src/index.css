@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy-950: #020818;
+  --navy-900: #0a1628;
+  --navy-800: #0f2040;
+  --gold-400: #e8c14a;
+  --gold-500: #d4a017;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--navy-950);
+  color: #e8edf5;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #020818; }
+::-webkit-scrollbar-thumb { background: #d4a017; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #e8c14a; }
+
+/* Selection */
+::selection { background: rgba(212, 160, 23, 0.3); color: #fff; }
+
+/* Grid texture overlay */
+.grid-texture {
+  background-image: 
+    linear-gradient(rgba(212, 160, 23, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 160, 23, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Ledger lines pattern */
+.ledger-pattern {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 28px,
+    rgba(212, 160, 23, 0.04) 28px,
+    rgba(212, 160, 23, 0.04) 29px
+  );
+}
+
+/* Gold shimmer text */
+.shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    #d4a017 0%,
+    #f5d78e 25%,
+    #e8c14a 50%,
+    #f5d78e 75%,
+    #d4a017 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Glow effects */
+.glow-gold {
+  box-shadow: 0 0 20px rgba(212, 160, 23, 0.3), 0 0 60px rgba(212, 160, 23, 0.1);
+}
+
+.glow-gold-text {
+  text-shadow: 0 0 20px rgba(212, 160, 23, 0.5);
+}
+
+/* Nav active link */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #d4a017;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Skill progress bar */
+.skill-bar {
+  background: linear-gradient(90deg, #d4a017, #f5d78e);
+  border-radius: 4px;
+  transition: width 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(212, 160, 23, 0.12);
+  border-color: rgba(212, 160, 23, 0.4) !important;
+}
+
+/* Section divider */
+.section-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #d4a017, transparent);
+  margin-bottom: 1rem;
+}
+
+/* Input styles */
+.input-field {
+  background: rgba(15, 32, 64, 0.8);
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  color: #e8edf5;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: rgba(212, 160, 23, 0.6);
+  box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.1);
+}
+
+/* Floating particle */
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.6; }
+  33% { transform: translateY(-30px) translateX(15px); opacity: 1; }
+  66% { transform: translateY(-15px) translateX(-10px); opacity: 0.8; }
+}
+
+/* Mobile menu */
+.mobile-menu-enter {
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Timeline connector */
+.timeline-line {
+  background: linear-gradient(180deg, #d4a017, rgba(212, 160, 23, 0.1));
+}
+
+/* Tag badge */
+.tag-badge {
+  background: rgba(212, 160, 23, 0.1);
+  border: 1px solid rgba(212, 160, 23, 0.25);
+  color: #e8c14a;
+  font-size: 0.7rem;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+/* Chart bars decorative */
+@keyframes bar-grow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+.chart-bar {
+  transform-origin: bottom;
+  animation: bar-grow 1s ease forwards;
+}
+
+/* PDF viewer */
+.pdf-viewer-container {
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Backdrop blur fallback */
+@supports not (backdrop-filter: blur(10px)) {
+  .backdrop-blur-sm { background-color: rgba(2, 8, 24, 0.95) !important; }
+}
